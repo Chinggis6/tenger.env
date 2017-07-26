@@ -8,3 +8,6 @@ name=chinggis6
 
 [credential]
 username=chinggis6
+
+[alias]
+a=add -v

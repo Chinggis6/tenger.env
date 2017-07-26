@@ -11,3 +11,5 @@ username=chinggis6
 
 [alias]
 a=add -v
+c=commit -v
+p=push -v

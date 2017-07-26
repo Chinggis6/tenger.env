@@ -1,0 +1,9 @@
+# git config --system user.email=
+# --global ~/.gitconfig
+# --local /repo/.git/config
+
+[user]
+email=chinggis6@icloud.com
+name=chinggis6
+[credential]
+username=chinggis6

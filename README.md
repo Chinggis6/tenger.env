@@ -4,9 +4,9 @@
 
 ## loyalties
 
-shell|browser|pager|os|term|userland|network manager|package manager|editor|programming language|vcs|search|file manager|music player|video player|wm|wiki
----|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
-zsh|qutebrowser|less|archlinux|urxvt|coreutils|netctl|pacman|vim|php|git|ripgrep|ranger|mpd|mpv|i3|mediawiki
+shell|browser|pager|os|term|userland|network manager|package manager|editor|programming language|vcs|search|file manager|music player|video player|wm|wiki|markup|irc|note-taking|bookmark manager|password manager
+---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
+zsh|qutebrowser|less|archlinux|urxvt|coreutils|netctl|pacman|vim|php|git|ripgrep|ranger|mpd|mpv|i3|mediawiki|weechat|taskwarrior|buku|pass
 
 ### worthy alternatives
 

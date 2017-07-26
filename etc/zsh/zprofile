@@ -1,0 +1,70 @@
+#!/bin/zsh
+
+source /etc/profile
+source /etc/zsh/prompt.zsh
+source /etc/zsh/opt.zsh
+
+export KEYTIMEOUT=1 # 0.01 sec
+
+
+source $plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4' # blue; defaults to gray
+
+source $plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source $plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=default,fg=green,underline'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=default,fg=red,underline'
+
+mode=vicmd
+
+bindkey -M $mode '^p' history-substring-search-up
+bindkey -M $mode '^n' history-substring-search-down
+bindkey -M $mode $'\ec' capitalize-word
+bindkey -M $mode $'\eu' upcase-word
+bindkey -M $mode $'\el' downcase-word
+bindkey -M $mode 'gcc' vi-pound-insert
+
+mode=viins
+
+# lags
+bindkey -M $mode '^f' forward-char
+bindkey -M $mode '^b' backward-char
+
+# with i3 alt as prefix it's rendered impossible
+bindkey -M $mode $'\ef' forward-word
+bindkey -M $mode $'\eb' backward-word
+
+bindkey -M $mode '^a' beginning-of-line
+bindkey -M $mode '^e' end-of-line
+
+bindkey -M $mode '^p' history-substring-search-up
+bindkey -M $mode '^n' history-substring-search-down
+
+bindkey -M $mode '^u' kill-whole-line
+bindkey -M $mode '^k' kill-line
+
+bindkey -M $mode '^h' backward-delete-char
+bindkey -M $mode '^w' backward-kill-word # RL's unix-word-rubout is absent in ZLE
+
+bindkey -M $mode '^t' transpose-chars
+bindkey -M $mode '^r' history-incremental-pattern-search-backward
+bindkey -M $mode $'\et' transpose-words
+unset mode
+
+# source /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+# powerline-daemon -q
+# https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html
+
+source /usr/share/zsh/scripts/zplug/init.zsh
+
+# zplug "b4b4r07/enhancd", use:init.sh
+# zplug load # --verbose; zplug install
+# $ENHANCD_FILTER, fzy
+
+autoload -Uz promptinit
+promptinit
+
+zstyle ':completion:*' menu select
+
+setopt completealiases

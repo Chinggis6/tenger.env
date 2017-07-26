@@ -1,15 +1,29 @@
-#!/bin/zsh
-
-# zsh -l to source it
+#emulate sh -c 'source /etc/profile'
 
 source /etc/profile
 
-for file in /etc/zsh/*.zsh; do source $file; done
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=100000
+setopt appendhistory autocd extendedglob nomatch notify vi promptbang noclobber nobeep interactivecomments
 
+export KEYTIMEOUT=1 # 0.01 sec
 
-#source $plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-#HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=default,fg=green,underline'
-#HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=default,fg=red,underline'
+export PS1=\>
+export PS2=\>\>
+# export RPS1=!
+# export RPS1=%B%F{red}!%f%b
+export RPS1='%B%(?.%F{green}.%F{red})%?%f%b'
+export RPS2='%B%F{red}<<%f%b'
+
+source $plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4' # blue; defaults to gray
+
+source $plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source $plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=default,fg=green,underline'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=default,fg=red,underline'
 
 mode=vicmd
 
@@ -51,7 +65,7 @@ unset mode
 # powerline-daemon -q
 # https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html
 
-#source /usr/share/zsh/scripts/zplug/init.zsh
+source /usr/share/zsh/scripts/zplug/init.zsh
 
 # zplug "b4b4r07/enhancd", use:init.sh
 # zplug load # --verbose; zplug install

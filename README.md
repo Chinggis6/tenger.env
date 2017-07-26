@@ -4,13 +4,16 @@
 
 ## loyalties
 
-shell|browser|pager|os|term|userland|network manager|package manager|editor
----|---|---|---|---|---|---|---|---
-zsh|qutebrowser|less|archlinux|urxvt|coreutils|netctl|pacman|vim
+shell|browser|pager|os|term|userland|network manager|package manager|editor|programming language|vcs|search|file manager|music player|video player|wm
+---|---|---|---|---|---|---|---|---|---|---
+zsh|qutebrowser|less|archlinux|urxvt|coreutils|netctl|pacman|vim|php|git|ripgrep|ranger|mpd|mpv|i3
 
-### other alternatives
+### worthy alternatives
 
 * `fish`
 * `nmcli`
 * `yum`
 * `spacemacs`
+* `vlc`
+* `lxde`
+* `konqueror`

@@ -1,0 +1,9 @@
+# https://github.com/chrisallenlane/cheat
+
+# pip install cheat
+
+export DEFAULT_CHEAT_DIR='/dbx/cheat'
+export CHEAT_EDITOR=vim
+export CHEATCOLORS=true # syntax highlighting
+
+# export CHEATPATH='/path/to/my/cheats'

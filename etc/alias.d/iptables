@@ -1,0 +1,1 @@
+alias iptables=iptables -v -n --line-numbers

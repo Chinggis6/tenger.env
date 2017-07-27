@@ -1,0 +1,10 @@
+alias systemctl='systemctl --no-pager --no-legend -l' # --full (ellipsize; is-enabled)
+
+alias journalctl='journalctl --no-pager'
+
+alias loginctl='loginctl --no-pager --no-legend'
+alias list-sessions='loginctl list-sessions'
+alias terminate-session='loginctl terminate-session'
+alias unlock-sessions='loginctl unlock-sessions'
+alias lock-sessions='loginctl lock-sessions'
+alias timedatectl='timedatectl --no-pager'

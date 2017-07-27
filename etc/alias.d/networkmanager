@@ -1,0 +1,2 @@
+alias nmcliw='nmcli -p -f bars,ssid,security dev wifi list'
+alias nmclip='nmcli -p -c yes -f name,device con show'

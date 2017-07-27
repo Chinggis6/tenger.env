@@ -1,0 +1,4 @@
+alias less=less -R
+alias modprobe=modprobe -v
+alias pacman=pacman --noconfirm --color=always
+alias w=w -sh

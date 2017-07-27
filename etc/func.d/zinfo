@@ -1,0 +1,4 @@
+zinfo()
+{
+info --index-search=$1 zsh
+}

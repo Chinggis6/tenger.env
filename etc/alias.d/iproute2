@@ -1,0 +1,1 @@
+alias ip='ip -c -h' # -h works with -s (--stats)

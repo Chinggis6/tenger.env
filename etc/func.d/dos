@@ -1,0 +1,6 @@
+function mklink
+{
+destination=$1
+source=$2
+/usr/bin/ln -s $source $destination
+}

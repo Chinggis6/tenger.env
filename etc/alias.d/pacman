@@ -1,0 +1,7 @@
+alias pacman='pacman --noconfirm'
+alias pactree='pactree -c'
+alias pkgfile='pkgfile -ir' # --ignorecase --regex
+
+alias makepkg='makepkg --skipinteg' # -si
+
+alias pacaur='pacaur --noconfirm' # --skipinteg

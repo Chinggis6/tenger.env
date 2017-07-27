@@ -1,0 +1,13 @@
+# Google
+
+export lesssecureapps=https://myaccount.google.com/lesssecureapps
+export addmailservice=https://accounts.google.com/b/0/AddMailService
+
+# ---
+export otw=http://overthewire.org/wargames/
+
+export nxg=http://www.nitrxgen.net/md5db/ # hash goes in here
+
+export ibm=public.dhe.ibm.com # anonymous
+
+export zzapper=http://zzapper.co.uk/zshtips.html

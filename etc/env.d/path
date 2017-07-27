@@ -1,0 +1,4 @@
+PATH+=:~/.gem/ruby/2.4.0/bin
+PATH+=:/dbx/bin
+
+export PATH

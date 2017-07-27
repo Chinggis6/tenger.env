@@ -1,0 +1,6 @@
+mimefd()
+{
+mimed `mimef $1`
+}
+
+alias mimea=mimefd

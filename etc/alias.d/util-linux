@@ -1,0 +1,17 @@
+# util-linux
+alias mount='mount -v'
+alias rename='rename -v'
+alias kill='/usr/bin/kill --verbose' # overrides the built-in
+alias cal='cal -m --color=always'
+# alias logger='logger -i'
+alias column='column -t'
+# agetty
+# login
+alias last='last -ain 10 | colorize -c green,purple,cyan:35,yellow' # --hostlast --ip --limit -w --fullnames
+alias lastb='lastb -ain 10 | colorize -c green,purple,cyan:35,yellow' # bad login attempts
+# cfdisk
+
+alias dmesg='dmesg -H --color --nopager' # --human
+
+# alias mkswap='mkswap'
+alias swapon='swapon -v'

@@ -1,0 +1,13 @@
+alias -g R=--remote
+
+alias -g G=grep
+
+alias -g S=sort
+
+alias -g C='wc -l'
+
+alias -g U='uniq'
+
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'

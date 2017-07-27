@@ -1,0 +1,1 @@
+alias grub-install='grub-install -v' # /dev/sda

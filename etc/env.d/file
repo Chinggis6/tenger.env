@@ -1,0 +1,189 @@
+# directories
+export share=/usr/share
+export etc=/etc
+export usr=/usr
+export var=/var
+export run=/run # /var/run
+
+# etc
+export profile=$etc/profile
+
+# share
+export pixmaps=$share/pixmaps
+export icons=$share/icons
+export zoneinfo=$share/zoneinfo
+export man=$share/man
+export info=$share/info
+export applications=$share/applications
+export apps=$applications
+export A=$apps
+export locale=$share/locale # mn/LC_MESSAGES
+export webapps=$share/webapps # zabbix adminer
+export webapps_=$etc/webapps
+export fonts=$share/fonts
+export licenses=$share/licenses
+export xsessions=$share/xsessions
+export sounds=$share/sounds
+
+# usr
+export src=$usr/src # source code
+export lib=$usr/lib # libraries
+export bin=$usr/bin # binaries
+export include=$usr/include # headers
+
+export site_packages=/usr/lib/python3.6/site-packages
+export SP=$sitepackages
+export site_packages2=/usr/lib/python2.7/site-packages
+export SP2=$sitepackages2
+export repository=$sitepackages2/offlineimap/repository
+export oimrep=$repository
+
+export bindings=/usr/lib/python3.6/site-packages/powerline/bindings
+export perl=/usr/lib/urxvt/perl
+export system=/usr/lib/systemd/system
+export extensions=/usr/lib/firefox/browser/extensions
+
+# My structure
+export alias=$etc/alias.d
+export app=$alias/app
+export suffix=$alias/alias.suffix
+export sx=$alias/alias.suffix
+export env=$etc/env.d
+export files=$env/files
+export F=$files
+
+# Vim
+export vim80=$share/vim/vim80
+export vim=$vim80
+export autoload=$vim/autoload
+
+# OfflineIMAP
+export offlineimap=$share/offlineimap
+export oimd=$offlineimap
+export oimconf=$oimd/offlineimap.conf
+export oim=$oimconf
+
+# Zsh
+export zprofile=/etc/zsh/zprofile
+export plugins=$share/zsh/plugins
+export zsh_completion=$share/zsh/functions/Completion
+
+export tmux=/etc/tmux.conf
+export T=$tmux
+export tmux_plugins=~/.tmux/plugins
+export addressbook=~/.abook/addressbook
+export xresources=~/.Xresources
+export X=$xresources
+export xinitrc=~/.xinitrc
+export x=$xinitrc
+export vimrc=/etc/vimrc
+export V=/etc/vimrc
+export mirrorlist=/etc/pacman.d/mirrorlist
+export pacman=/etc/pacman.conf
+export p=$pacman
+export P=$profile
+export Z=$zprofile
+export hosts=/etc/hosts
+export H=$hosts
+
+export sshD=$etc/ssh
+export ssh=$sshD/ssh_config
+export s=$ssh
+export sshd=$sshD/sshd_config
+export S=$sshd
+
+export rainbow_oauth=~/.rainbow_oauth
+export oauth=$rainbow_oauth
+
+export i3=/etc/i3/config
+export I=$i3
+
+export rlwrap_completions=/usr/share/rlwrap/completions
+export rlwrap=$rlwrap_completions
+export rlw=$rlwrap
+
+export X11=$share/X11
+export appdefaults=$X11/app-defaults
+export AD=$appdefaults
+
+export node_modules=$lib/node_modules
+export NM=$nodemodules
+
+export CU=/alias/coreutils
+export UL=/alias/util-linux
+
+export blacklist=$etc/modprobe.d/blacklist.conf
+export login=$etc/login.defs
+export ntp=$etc/ntp.conf
+
+# systemd
+export systemd=/etc/systemd
+export S=$systemd
+export timesyncd=$S/timesyncd.conf
+export journald=$S/journald.conf
+
+export custom=/alias/custom
+
+export gems=$lib/ruby/gems/2.4.0/gems
+export cloudruby=$gems/cloudruby-1.2.0/lib/ncurses_ui.rb
+
+export theme=$icons/default/index.theme
+
+export urlview=$etc/urlview/system.urlview
+
+export map=$etc/vimrc.d/map.vim
+export pmap=$etc/vimrc.d/pmap.vim
+export cms=$etc/vimrc.d/cms.vim
+
+export xdg=$etc/xdg
+export pacaur=$xdg/pacaur/config
+
+export onedrive=$share/onedrive/config.default
+
+export doc=$share/doc
+
+export nginx=$etc/nginx/nginx.conf
+export N=$nginx
+
+export php=$etc/php/php.ini
+export php_cli=$etc/php/php-cli.ini
+
+export my=$etc/mysql/my.cnf
+export mysql=$my
+
+export fpm=$etc/php/php-fpm.conf
+
+export www=/etc/php/php-fpm.d/www.conf
+
+export html=/$share/nginx/html
+
+export nginx_modules=$lib/nginx/modules
+
+export log=$var/log
+export pacman_log=$log/pacman.log
+
+export mkinitcpio=$etc/mkinitcpio.conf
+
+export plymouth=$etc/plymouth/plymouthd.conf
+
+export fish_completions=$share/fish/completions
+
+export git=https://github.com/chinggis6/arch.git
+
+export coreutils=/alias/coreutils
+
+export bash_completion=$etc/bash_completion.d
+
+export myclirc=$SP/mycli/myclirc
+export M=$myclirc
+
+export services=$etc/services # ports, protocols
+
+export npmrc=$usr/etc/npmrc
+
+export alsa=$share/alsa/alsa.conf
+
+export qutebrowser_history=~/.local/share/qutebrowser/history
+export qutebrowser_cmd_history=~/.local/share/qutebrowser/cmd-history
+export qutebrowser=~/.config/qutebrowser/qutebrowser.conf
+export userscripts=$share/qutebrowser/userscripts

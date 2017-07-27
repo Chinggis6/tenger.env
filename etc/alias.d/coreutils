@@ -1,0 +1,30 @@
+# coreutils 8.27
+alias ls='ls --color=always -a1Fh' # -h wth -l and -s
+alias ln='ln -vi'
+alias rmdir='rmdir -v'
+alias mkdir='mkdir -vp' # --parents
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -iv'
+alias chmod='chmod -v'
+alias chown='chown -vh'
+alias chgrp='chgrp -v'
+alias id='id -un' # user name
+alias dd='dd status=progress bs=4M' # if= of=/dev/
+# mkfifo
+alias md5sum='md5sum --tag' # BSD-style
+alias sha1sum='sha1sum --tag'
+alias sha256sum='sha256sum --tag'
+alias sha512sum='sha512sum --tag'
+alias shred='shred -vz'
+alias echo='echo -n'
+alias du='du --si' # -h; --exclude='*.o'
+alias df='df -H' # -h; same as --si
+alias realpath='realpath -z' # --zero
+# shuf # -i 1-100 -n 5
+# alias dirname='dirname -z'
+# cd: string not in pwd: (cannot use cd as cd `dirname $dir`)
+# alias basename='basename -z'
+# nohup
+# tty
+alias date='date +%b_%d_%Y_%H-%M'

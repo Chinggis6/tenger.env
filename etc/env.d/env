@@ -1,0 +1,8 @@
+export EDITOR=vim
+export BROWSER=qutebrowser
+export PAGER=less
+
+export CDPATH=\
+/dbx:\
+/dbx/srv:\
+/dbx/srv/lab:\

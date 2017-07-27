@@ -1,0 +1,3 @@
+alias dhclient='dhclient -v'
+
+# dhclient-script

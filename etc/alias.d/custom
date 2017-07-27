@@ -1,0 +1,38 @@
+# alias sqlite=sqlite3
+alias sqlite='rlwrap -aNci sqlite3' # community
+alias bzip=bzip2
+
+alias resource='source /etc/profile'
+alias rs=resource
+alias xresource='xrdb -load ~/.Xresources'
+alias xres=xresources
+
+# web
+alias youtube=mpsyt
+alias twitter=rainbowstream
+alias reddit=rtv
+alias soundcloud=cloudruby # cloudruby-git (AUR); cloudruby chillout; /usr/lib/cloudruby/lib/ncurses_ui.rb
+alias sc=soundcloud
+
+alias bfc=bash-fuzzy-clock # AUR
+alias fuzzytime=bfc
+
+alias v=vboxmanage
+
+alias k=kill
+
+alias J=journalctl
+alias S=systemctl
+alias L=loginctl
+alias T=timedatectl
+alias syscat=systemd-cat
+
+alias ll='ls -l'
+
+alias mime=xdg-mime
+alias mimef='mime query filetype'
+alias mimed='mime query default'
+
+alias torrent=rtorrent
+
+# vim: ft=conf

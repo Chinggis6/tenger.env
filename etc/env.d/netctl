@@ -1,0 +1,2 @@
+export netctl=/etc/netctl # profiles
+export netctl_examples=$netctl/examples # example profiles

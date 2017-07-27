@@ -1,0 +1,17 @@
+alias -s mpg=mpv
+
+# media
+alias -s png=feh
+alias -s jpg=feh
+alias -s pdf=zathura
+alias -s mp4=mpv
+alias -s iso=iso-info
+
+# dev
+alias -s css='vim --remote'
+alias -s html='vim --remote'
+alias -s vim='vim --remote'
+alias -s db='sqlite3'
+
+alias -s xlsx='localc'
+alias -s xls='localc'

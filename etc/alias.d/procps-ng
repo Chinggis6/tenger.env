@@ -1,0 +1,7 @@
+# --full is to match full command line when searching, eg switches, not just name (more output)
+# -a is --list-full; full command line, and process ID (show switches, arguments, and files too if any)
+# -i is --ignore-case; for case-insensitive search 
+alias pgrep='pgrep -aif'
+alias free='free -h'
+alias pkill='pkill -ifec -9' # --echo only in --help
+alias uptime='uptime -p'

@@ -1,0 +1,1 @@
+alias mkinitcpio='mkinitcpio -v'

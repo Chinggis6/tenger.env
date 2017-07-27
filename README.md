@@ -21,3 +21,21 @@ zsh|qutebrowser|less|archlinux|urxvt|coreutils|netctl|pacman|vim|php|git|ripgrep
 * `sqlite`
 * `i3lock`
 * `rofi`
+
+## some policies
+**likes/dislikes**
+* no pager
+* no prompt
+* no bell
+* no pop-up
+* no blinking
+* no brightness
+* tiling wm
+* mechanical keyboard
+* statusbar at top
+* `;` to command
+* `=` to zoom
+* forced `vim`
+* forced `tmux`
+* system-wide scope
+* root as user

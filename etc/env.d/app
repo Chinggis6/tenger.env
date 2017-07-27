@@ -1,2 +1,0 @@
-export TASKRC=/usr/local/etc/taskrc # defaults to ~/.taskrc
-export TASKDATA=/usr/local/share/task # defaults to ~/.task

@@ -1,0 +1,273 @@
+font pango:DejaVu Sans Mono 8
+
+set $up h
+set $down j
+set $left k
+set $right l
+
+set $mod Mod1
+# Mod4 is Win
+
+floating_modifier $mod
+bindsym $mod+Return exec urxvt -e tmux
+bindsym $mod+Shift+Return exec urxvt
+bindsym $mod+Shift+q kill
+
+bindsym $mod+o exec rofi -show window
+
+bindsym Ctrl+Print exec teiler
+
+# https://wiki.archlinux.org/index.php/Rofi#Rofi_as_a_drop-in_replacement_for_dmenu
+bindsym Ctrl+$mod+d exec "rofi -show run -modi run -location 1 -width 100 -lines 2 -line-margin 0 -line-padding 1 -separator-style none -font 'mono 10' -columns 9 -bw 0 -disable-history -hide-scrollnar -color-window '#222222, #222222, #b1b4b3' -color-normal '#222222, #b1b4b3, #222222, #005577, #b1b4b3' -color-active '#222222, #b1b4b3, #222222, #007763, #b1b4b3' -color-urgent '#222222, #b1b4b3, #222222, #77003d, #b1b4b3' -kb-row-select 'Tab' -kb-row-tab ''"
+
+bindsym F1 exec qutebrowser --backend webengine
+bindsym F8 exec emacs
+
+bindsym F10 exec vboxmanage startvm win
+bindsym F11 exec /dbx/srv/lab/vlan/win16
+bindsym F12 exec /dbx/vpn/lab/openvpn.sh
+
+bindsym $mod+d exec dmenu_run -i -p \>
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -p \#'
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+
+bindsym $mod+bar split h
+bindsym $mod+shift+bar split v
+bindsym $mod+v layout splith
+bindsym $mod+Shift+v layout splitv
+bindsym $mod+Ctrl+Shift+v layout toggle split
+
+bindsym $mod+space floating toggle
+bindsym $mod+Shift+space focus mode_toggle
+bindsym $mod+a focus parent
+# focus the child container
+#bindsym $mod+d focus child
+
+bindsym $mod+Shift+p move scratchpad
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+p scratchpad show
+
+# bindsym $mod+1 workspace 1
+# bindsym $mod+2 workspace 2
+# bindsym $mod+3 workspace 3
+# bindsym $mod+4 workspace 4
+# bindsym $mod+5 workspace 5
+# bindsym $mod+6 workspace 6
+# bindsym $mod+7 workspace 7
+# bindsym $mod+8 workspace 8
+# bindsym $mod+9 workspace 9
+# bindsym $mod+0 workspace 10
+set $ws11 11: Workspace
+bindsym $mod+minus workspace $ws11
+set $ws12 12: Workspace
+bindsym $mod+equal workspace $ws12
+# bindsym $mod+Shift+1 move container to workspace 1
+# bindsym $mod+Shift+2 move container to workspace 2
+# bindsym $mod+Shift+3 move container to workspace 3
+# bindsym $mod+Shift+4 move container to workspace 4
+# bindsym $mod+Shift+5 move container to workspace 5
+# bindsym $mod+Shift+6 move container to workspace 6
+# bindsym $mod+Shift+7 move container to workspace 7
+# bindsym $mod+Shift+8 move container to workspace 8
+# bindsym $mod+Shift+9 move container to workspace 9
+# bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+minus move container to workspace $ws11
+bindsym $mod+Shift+equal move container to workspace $ws12
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+set $e_type warning
+set $e_msg Exit to TTY?
+set $e_btn OK
+set $e_cmd i3-msg exit
+bindsym $mod+Shift+e exec i3-nagbar -t $e_type -m '$e_msg' -b '$e_btn' '$e_cmd'
+# i3-msg communicates with i3; i3-nagbar with user, through dialog box
+
+mode resize
+{
+bindsym $left resize shrink width 10 px or 10 ppt
+bindsym $down resize grow height 10 px or 10 ppt
+bindsym $up resize shrink height 10 px or 10 ppt
+bindsym $right resize grow width 10 px or 10 ppt
+bindsym Return mode default
+bindsym Escape mode default
+}
+
+bindsym $mod+r mode resize
+
+bar
+{
+font pango:Awesome 8
+position bottom
+tray_output none
+}
+
+bar
+{
+font pango:Awesome 7
+workspace_buttons no
+position top
+# font pango:DejaVu Sans Mono 8
+# font pango:DejaVu Source Code Pro 9
+# font pango:Awesome 8
+
+set $modules -m mpd publicip nic memory battery xrandr weather time date
+set $params -p root.path=/ date.format="%a, %b %d" time.format="%H:%M" weather.location=aze
+set $theme -t solarized-powerline
+# publicip xrandr
+status_command /usr/bin/bumblebee-status $modules $params $theme
+# bumblebee-status -l modules
+# status_command i3status
+}
+
+hide_edge_borders both # https://i3wm.org/docs/userguide.html#_hiding_vertical_borders
+new_window 1pixel # https://faq.i3wm.org/question/2885/disable-titlebar-completely.1.html
+#workspace_layout tabbed # https://pastebin.com/KT7V9HNJ
+
+exec --no-startup-id unclutter # unclutter-xfixes-git (AUR)
+exec --no-startup-id xbanish # AUR
+exec --no-startup-id redshift # VERY ESSENTIAL
+exec --no-startup-id pnmixer # AUR
+exec --no-startup-id fbxkb # AUR
+exec --no-startup-id dropbox-cli start
+# aur/dropbox-cli; dropbox-cli status
+
+# create /.scrot first
+set $scrot_options '%b-%d-%y_%H-%m-%S_$wx$h.png' -e 'mv $f /.scrot/'
+# scrot parses with strftime(3)
+bindsym Print exec --no-startup-id scrot $scrot_options #&& flash-screen
+bindsym --release Shift+Print exec --no-startup-id scrot --select $scrot_options #&& flash-screen
+
+bindsym Ctrl+Mod1+l exec --no-startup-id i3lock -c 000000 -f -e # --show-failed-attempts --ignore-empty-password
+bindsym Ctrl+Mod1+b exec --no-startup-id i3exit lock
+bindsym Ctrl+Mod1+f exec --no-startup-id i3lock-fancy -p
+# i3lock-fancy-dualmonitors-git (AUR)
+
+set $skyblue 87ceeb
+bindsym Ctrl+Mod1+x exec --no-startup-id i3lock -c $skyblue -i /asia.png
+bindsym $mod+z exec --no-startup-id i3-input -F 'Rename workspace to "%s"' -P 'New name: '
+bindsym $mod+x exec --no-startup-id i3-input -P \> # issue command
+
+set $control Headphone
+# Master; Simple Mixer Control; amixer scontrols
+set $step 5
+# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set $control $step%+
+# bindsym XF86AudioLowerVolume exec --no-startup-id amixer set $control $step%-
+# bindsym XF86AudioMute exec --no-startup-id amixer set $control toggle
+
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pamixer -i $step
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pamixer -d $step
+bindsym Shift+XF86AudioMute exec --no-startup-id pamixer -t
+# pamixer --get-volume; (community)
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id vol i $step
+bindsym XF86AudioLowerVolume exec --no-startup-id vol d $step
+bindsym XF86AudioMute exec --no-startup-id vol m
+# vol-git (AUR)
+
+bindsym $mod+grave workspace next
+bindsym $mod+Shift+grave workspace prev
+bindsym $mod+bracketright workspace next
+bindsym $mod+bracketleft workspace prev
+
+exec --no-startup-id dunst # AUR
+exec --no-startup-id feh --bg-scale "$HOME/.wall.png"
+exec --no-startup-id nm-applet # network-manager-applet-gtk2-jlindgren90-git (AUR); a/w nm-connection-editor
+exec --no-startup-id numlockx off # community
+exec --no-startup-id volnoti # AUR, vol
+
+# ETPS/2 Elantech Touchpad
+set $touchpad AlpsPS/2 ALPS GlidePoint
+exec --no-startup-id xinput --disable '$touchpad'
+bindsym $mod+Ctrl+t exec xinput --enable '$touchpad'
+bindsym XF86TouchpadToggle exec xinput --disable '$touchpad'
+
+bindsym XF86MonBrightnessUp exec light -Ap 20
+# light-git (AUR); light -G; -p percent, -r raw
+bindsym XF86MonBrightnessDown exec light -Up 20
+# xbacklight -inc 20 outputs 'No outputs have backlight property' error
+
+# don't append comments to the line neither in `bindsym` nor in `set`
+
+exec --no-startup-id kalu
+
+# tmux / dev
+set $ws1 1:  tmux / dev
+bindsym $mod+1 workspace $ws1
+bindsym $mod+Shift+1 move container to workspace $ws1
+
+# Microsoft / Windows Server
+set $ws2 2:  Microsoft
+bindsym $mod+2 workspace $ws2
+bindsym $mod+Shift+2 move container to workspace $ws2
+
+# IBM Power Systems
+set $ws3 3:  IBM
+bindsym $mod+3 workspace $ws3
+bindsym $mod+Shift+3 move container to workspace $ws3
+
+# Weechat / IRC
+set $ws4 4:  IRC
+bindsym $mod+4 workspace $ws4
+bindsym $mod+Shift+4 move container to workspace $ws4
+
+# qutebrowser
+set $ws5 5:  qutebrowser
+bindsym $mod+5 workspace $ws5
+bindsym $mod+Shift+5 move container to workspace $ws5
+
+# vlan 106
+set $ws6 6:  vlan 106
+bindsym $mod+6 workspace $ws6
+bindsym $mod+Shift+6 move container to workspace $ws6
+
+# mutt
+set $ws7 7:  mutt
+bindsym $mod+7 workspace $ws7
+bindsym $mod+Shift+7 move container to workspace $ws7
+
+# vim server
+set $ws8 8:  vim server
+bindsym $mod+8 workspace $ws8
+bindsym $mod+Shift+8 move container to workspace $ws8
+
+# meta
+set $ws9 9:  meta
+bindsym $mod+9 workspace $ws9
+bindsym $mod+Shift+9 move container to workspace $ws9
+
+# sandbox
+set $ws10 10:  sandbox
+bindsym $mod+0 workspace $ws10
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+assign [class="qutebrowser"] $ws5
+assign [instance="^weechat$"] $w4
+
+bindsym $mod+b bar mode toggle
+
+exec --no-startup-id i3-msg 'workspace 8; exec vim --servername vim; workspace 1'
+
+exec --no-startup-id feh --bg-scale /i3.png
+
+# disable energy star features; screen blanking; `xset dpms force off` to try
+exec --no-startup-id xset -dpms
+
+exec --no-startup-id kupfer
+
+# vi: ft=i3

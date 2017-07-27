@@ -9,3 +9,6 @@ aur/buku
 aur/zplug
 community/fzf
 core/ed
+community/task
+extra/htop
+extra/mpd

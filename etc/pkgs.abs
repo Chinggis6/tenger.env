@@ -12,3 +12,10 @@ core/ed
 community/task
 extra/htop
 extra/mpd
+community/dmenu
+community/rofi
+extra/feh
+extra/mpc
+community/zathura
+community/zathura-pdf-poppler
+extra/qt5-webengine

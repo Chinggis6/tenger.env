@@ -7,7 +7,9 @@ email=chinggis6@icloud.com
 name=chinggis6
 
 [credential]
-username=chinggis6
+#username=chinggis6
+helper=store
+#~/.git-credentials 600
 
 [alias]
 a=add -v

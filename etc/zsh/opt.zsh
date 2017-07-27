@@ -1,1 +1,1 @@
-setopt appendhistory autocd extendedglob nomatch notify vi promptbang noclobber nobeep interactivecomments
+setopt appendhistory autocd extendedglob nomatch notify vi promptbang noclobber nobeep interactivecomments completealiases

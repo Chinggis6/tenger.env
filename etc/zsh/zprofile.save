@@ -75,5 +75,3 @@ autoload -Uz promptinit
 promptinit
 
 zstyle ':completion:*' menu select
-
-setopt completealiases

@@ -6,3 +6,5 @@ extra/fping
 community/ranger
 community/pass # dep. tree
 aur/buku
+aur/zplug
+community/fzf

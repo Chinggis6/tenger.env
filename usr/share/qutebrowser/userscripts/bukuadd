@@ -1,0 +1,2 @@
+#!/bin/sh
+echo | buku -a "$QUTE_URL" --title "$QUTE_TITLE"
